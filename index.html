@@ -153,6 +153,11 @@
                     </div>
                 </div>
 
+                <div class="text-center mt-8">
+                    <button onclick="showReflectionQuestions()" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:from-purple-700 hover:to-blue-700 transition-all">
+                        שאלות רפלקציה במחברת
+                    </button>
+                </div>
 
             </div>
         </div>
@@ -204,6 +209,11 @@
                     </div>
                 </div>
 
+                <div class="text-center mt-8">
+                    <button onclick="showReflectionQuestions()" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-medium hover:from-purple-700 hover:to-blue-700 transition-all">
+                        שאלות רפלקציה במחברת
+                    </button>
+                </div>
 
             </div>
         </div>
@@ -307,20 +317,59 @@
             } else if (type === 'text') {
                 title.textContent = '📚 טקסט - למידה קוגניטיבית';
                 content.innerHTML = `
-                    <div class="text-center">
-                        <p class="text-gray-600 mb-6">קראי את המאמר המקיף על הנושא</p>
-                        <iframe src="https://www.perplexity.ai/search/nyhvl-shy-vr-bkyth-bh-lkl-tlmy-8AHlJdnxQOyWe7DtXt9ulg#0" 
-                                width="100%" height="500" frameborder="0" class="rounded-lg">
-                        </iframe>
+                    <div>
+                        <p class="text-gray-600 mb-6 text-center">קראי את המאמרים על הנושא</p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold text-gray-800 mb-4">מאמרים מומלצים:</h4>
+                            <div class="space-y-3">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-blue-800 mb-2">📖 מאמר אקדמי</h5>
+                                    <a href="https://www.openu.ac.il/innovation/chais2012/downloads/v-104.pdf" 
+                                       target="_blank" 
+                                       class="text-blue-600 hover:text-blue-800 underline">
+                                        מחקר אקדמי על למידה דיגיטלית
+                                    </a>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-green-800 mb-2">💡 תיאור אישי וטיפים</h5>
+                                    <a href="https://www.edunow.org.il/article/4453" 
+                                       target="_blank" 
+                                       class="text-green-600 hover:text-green-800 underline">
+                                        חוויות אישיות וטיפים מעשיים
+                                    </a>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-purple-800 mb-2">🎯 מאמר טיעוני</h5>
+                                    <a href="https://brainscienceeducation.blogspot.com/2020/07/blog-post.html" 
+                                       target="_blank" 
+                                       class="text-purple-600 hover:text-purple-800 underline">
+                                        דיון מעמיק בנושא החינוך הדיגיטלי
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <iframe src="https://www.perplexity.ai/search/nyhvl-shy-vr-bkyth-bh-lkl-tlmy-8AHlJdnxQOyWe7DtXt9ulg#0" 
+                                    width="100%" height="400" frameborder="0" class="rounded-lg">
+                            </iframe>
+                        </div>
                     </div>
                 `;
             } else if (type === 'video') {
                 title.textContent = '🎥 סרטון - למידה חזותית';
                 content.innerHTML = `
                     <div class="text-center">
-                        <p class="text-gray-600 mb-6">צפי בסרטון המקיף על הנושא</p>
+                        <p class="text-gray-600 mb-6">צפי בסרטונים על הנושא</p>
                         <iframe width="100%" height="400" 
                                 src="https://www.youtube.com/embed/NLaKrJGTxhU?si=FV0VOCHx2JyAUKf4" 
+                                frameborder="0" allowfullscreen class="rounded-lg mb-4">
+                        </iframe>
+                        <iframe width="100%" height="400" 
+                                src="https://www.youtube.com/embed/_XaRAcKTTTE?si=rDn7H9X5ZoVwW9kH" 
                                 frameborder="0" allowfullscreen class="rounded-lg">
                         </iframe>
                     </div>
@@ -348,5 +397,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966f820bd30519ad',t:'MTc1MzgyMjQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966fa515d64bd9d2',t:'MTc1MzgyMzg2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
