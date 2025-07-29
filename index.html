@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פעילות דיגיטלית - ניהול שיעור בכיתה דיגיטלית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .popup-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .innovation-icon {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <span class="text-4xl mr-3">💻</span>
+                <h1 class="text-3xl md:text-4xl font-bold">ניהול שיעור בכיתה בה לכל תלמידה מחשב אישי</h1>
+                <span class="text-4xl ml-3 innovation-icon">🚀</span>
+            </div>
+            <p class="text-lg opacity-90">אולפנת אמית צפת תשפ"ה</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Initial Choice Section -->
+        <div id="initialChoice" class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">בחרי את דרך הלמידה שלך</h3>
+                <p class="text-gray-600">איך תרצי להתחיל את המסע הדיגיטלי שלך?</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Observer Card -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 cursor-pointer border-2 border-transparent hover:border-purple-300" onclick="showObserverPage()">
+                    <div class="text-center">
+                        <div class="text-6xl mb-6">👀</div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">צופה</h4>
+                        <p class="text-gray-600 mb-6">אני רוצה לצפות ולהתבונן בתהליך הלמידה</p>
+                        <div class="bg-purple-100 text-purple-700 px-6 py-3 rounded-full font-medium">
+                            התחילי לצפות ולרשום
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learner Card -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 cursor-pointer border-2 border-transparent hover:border-blue-300" onclick="showLearnerPage()">
+                    <div class="text-center">
+                        <div class="text-6xl mb-6">🎓</div>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">לומדת</h4>
+                        <p class="text-gray-600 mb-6">אני רוצה ללמוד באופן פעיל על הנושא</p>
+                        <div class="bg-blue-100 text-blue-700 px-6 py-3 rounded-full font-medium">
+                            התחילי ללמוד
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Observer Page -->
+        <div id="observerPage" class="max-w-4xl mx-auto hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">דף צפייה - שאלות למחברת</h3>
+                    <p class="text-gray-600">השאלות הבאות יעזרו לך להתבונן ולהבין את תהליך הלמידה העצמאית</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-4 text-purple-800">שאלות לצפייה ורישום במחברת:</h4>
+                        <ol class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">1</span>
+                                <span>מה רמת הריכוז של המורות במהלך הלמידה העצמאית? מה אני יכולה להסיק מכך על התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">2</span>
+                                <span>עד כמה המורות נראות פעילות או סבילות בתהליך הלמידה? איך זה יכול להשפיע על התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">3</span>
+                                <span>איך המורות מתמודדות עם קשיים טכניים או תוכניים? מה זה מלמד אותי על התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">4</span>
+                                <span>מה סוגי האינטראקציות בין המורות למחשב? איך זה יכול להשפיע על האינטראקציות של התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">5</span>
+                                <span>איך המורות מנהלות את זמן הלמידה שלהן? מה זה מלמד על ניהול זמן של התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">6</span>
+                                <span>איך המורות מגיבות לסביבה דיגיטלית? מה זה מלמד על התפקיד שלי כמורה עם התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">7</span>
+                                <span>איך אני יכולה לזהות מורות שזקוקות לעזרה נוספת? איך זה יעזור לי לזהות תלמידות שזקוקות לעזרה?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">8</span>
+                                <span>מה ההבדלים בין למידה מסורתית ללמידה דיגיטלית שאני רואה אצל המורות? איך זה יכול להשפיע על התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">9</span>
+                                <span>איך הטכנולוגיה משפיעה על דרכי הלמידה השונות של המורות? מה זה מלמד על התלמידות?</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold ml-3 mt-0.5">10</span>
+                                <span>מה המסקנות שלי לגבי עתיד החינוך בעידן הדיגיטלי בהתבסס על התנהגות המורות?</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Learner Page -->
+        <div id="learnerPage" class="max-w-4xl mx-auto hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">בחרי כיצד ללמוד על הנושא:</h3>
+                    <p class="text-gray-600">איזה סגנון למידה מתאים לך הכי טוב?</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Podcast Option -->
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 cursor-pointer border-2 border-transparent hover:border-green-300" onclick="openContent('podcast')">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🎧</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">פודקאסט</h4>
+                            <p class="text-sm text-gray-600 mb-4">אני לומדת שמיעתית!</p>
+                            <div class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                האזיני עכשיו
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Option -->
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 cursor-pointer border-2 border-transparent hover:border-blue-300" onclick="openContent('text')">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">טקסט</h4>
+                            <p class="text-sm text-gray-600 mb-4">תני לחכמה ותחכם עוד</p>
+                            <div class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                קראי עכשיו
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Option -->
+                    <div class="card-hover bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 cursor-pointer border-2 border-transparent hover:border-red-300" onclick="openContent('video')">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">🎥</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">סרטון</h4>
+                            <p class="text-sm text-gray-600 mb-4">אני לומדת חזותית!</p>
+                            <div class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                צפי עכשיו
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Reflection Questions -->
+        <div id="reflectionQuestions" class="max-w-4xl mx-auto hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4">💭</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">שאלות רפלקציה במחברת</h3>
+                    <p class="text-gray-600">זמן לעיבוד, חשיבה והסקת מסקנות</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-xl">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold ml-4 mt-1">💡</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">מה התחדש לי?</h4>
+                                    <p class="text-gray-600">רשמי את התובנות החדשות שעלו לך מהלמידה או ההתנסות עצמה</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold ml-4 mt-1">❤️</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">למה התחברתי ולמה לא?</h4>
+                                    <p class="text-gray-600">לאיזה תוכן התחברת יותר ולאיזה פחות? מה בהתנסות היה מבחינתך חיובי ומה שלילי?</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold ml-4 mt-1">🔍</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-800 mb-2">מה אני עוד רוצה לדעת בנושא?</h4>
+                                    <p class="text-gray-600">רשמי שאלות נוספות שעלו לך ונושאים שתרצי להעמיק בהם</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <button onclick="goBack()" class="bg-gray-500 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-600 transition-all ml-4">
+                        חזרה להתחלה
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Content Popup -->
+    <div id="contentPopup" class="fixed inset-0 popup-overlay hidden items-center justify-center z-50" onclick="closePopup()">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-hidden" onclick="event.stopPropagation()">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 id="popupTitle" class="text-xl font-bold text-gray-800"></h3>
+                <button onclick="closePopup()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="popupContent" class="p-6 overflow-y-auto max-h-[70vh]">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showObserverPage() {
+            document.getElementById('initialChoice').classList.add('hidden');
+            document.getElementById('observerPage').classList.remove('hidden');
+        }
+
+        function showLearnerPage() {
+            document.getElementById('initialChoice').classList.add('hidden');
+            document.getElementById('learnerPage').classList.remove('hidden');
+        }
+
+        function showReflectionQuestions() {
+            document.getElementById('observerPage').classList.add('hidden');
+            document.getElementById('learnerPage').classList.add('hidden');
+            document.getElementById('reflectionQuestions').classList.remove('hidden');
+        }
+
+        function openContent(type) {
+            const popup = document.getElementById('contentPopup');
+            const title = document.getElementById('popupTitle');
+            const content = document.getElementById('popupContent');
+            
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            if (type === 'podcast') {
+                title.textContent = '🎧 פודקאסט - למידה שמיעתית';
+                content.innerHTML = `
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-6">האזיני לפודקאסט על ניהול כיתה דיגיטלית</p>
+                        <iframe src="https://drive.google.com/file/d/1y8wUgCPvvZR55FhTBUA611i2rXHJFYCr/preview" 
+                                width="100%" height="400" frameborder="0" class="rounded-lg">
+                        </iframe>
+                    </div>
+                `;
+            } else if (type === 'text') {
+                title.textContent = '📚 טקסט - למידה קוגניטיבית';
+                content.innerHTML = `
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-6">קראי את המאמר המקיף על הנושא</p>
+                        <iframe src="https://www.perplexity.ai/search/nyhvl-shy-vr-bkyth-bh-lkl-tlmy-8AHlJdnxQOyWe7DtXt9ulg#0" 
+                                width="100%" height="500" frameborder="0" class="rounded-lg">
+                        </iframe>
+                    </div>
+                `;
+            } else if (type === 'video') {
+                title.textContent = '🎥 סרטון - למידה חזותית';
+                content.innerHTML = `
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-6">צפי בסרטון המקיף על הנושא</p>
+                        <iframe width="100%" height="400" 
+                                src="https://www.youtube.com/embed/NLaKrJGTxhU?si=FV0VOCHx2JyAUKf4" 
+                                frameborder="0" allowfullscreen class="rounded-lg">
+                        </iframe>
+                    </div>
+                `;
+            }
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('contentPopup');
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+        }
+
+        function goBack() {
+            document.getElementById('reflectionQuestions').classList.add('hidden');
+            document.getElementById('observerPage').classList.add('hidden');
+            document.getElementById('learnerPage').classList.add('hidden');
+            document.getElementById('initialChoice').classList.remove('hidden');
+        }
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'966f820bd30519ad',t:'MTc1MzgyMjQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
